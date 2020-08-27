@@ -1,2 +1,2 @@
 # web-study
-studying web
+First step-<a href="html basics.html" title="HTML basics">HTML basics</a>
