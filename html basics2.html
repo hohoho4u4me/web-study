@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>form and audio</h1>
+    </header>
+    <main>
+      <audio
+        controls="enabled"
+        autoplay="enabled"
+        src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
+      ></audio>
+      <form>
+        <input type="file" />
+        <input required placeholder="Name" type="text" />
+        <input placeholder="Lastname" type="text" />
+        <label for="firstnamelabel">First name label</label>
+        <input
+          id="firstnamelabel"
+          placeholder="Firstname"
+          minlength="10"
+          required
+          type="text"
+        />
+        <input type="submit" />
+      </form>
+    </main>
+    <fotter>
+      &copy; semantic tag인 header, main, footer 등은 그저 박스에 불과하지만,
+      코드를 이해하기 쉽게 만들어 준다. 반대로 div나 span(짧은 글에 쓰는)은 non
+      semantig tag이다. mdn의 content sectioning을 체크하자.
+    </fotter>
+  </body>
+</html>

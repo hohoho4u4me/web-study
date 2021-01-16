@@ -1,0 +1,12 @@
+h1 {
+  color: aqua;
+  font-size: 20px;
+  font-style: italic;
+}
+body {
+  color: wheat;
+}
+body {
+  /* 폭포처럼 cascading이라 뒷 색이 나온다.*/
+  color: tomato;
+}
