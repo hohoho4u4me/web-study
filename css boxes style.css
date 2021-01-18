@@ -1,0 +1,183 @@
+div {
+  height: 150px;
+  width: 150px;
+  background-color: royalblue;
+  padding: 10px;
+}
+#blank {
+  height: 100px;
+  opacity: 0;
+}
+#first {
+  /*id= first를 의미한다*/
+  background-color: cadetblue;
+  height: 140px;
+  width: 140px;
+}
+#second {
+  background-color: rgb(205, 235, 165);
+  height: 130px;
+  width: 130px;
+}
+#third {
+  background-color: cadetblue;
+  height: 120px;
+  width: 120px;
+}
+span {
+  border-width: 2px;
+  border-style: dashed; /*얘가 빠지면 아무것도 안된다. 검사로 취소해보면 안다.*/
+  border-color: black;
+  background-color: saddlebrown;
+  margin: 30px; /*검사해보면 상하는 margin이 안되는데, 
+  이는 inline 특징이다. 높이와 너비가 없다. 이럴 경우 box로 바꿔야한다.*/
+}
+html {
+  background-color: white;
+}
+body {
+  background-color: burlywood;
+  margin: 20px;
+  margin-right: 40px;
+  /*margin 20px 30px;는 상하/좌우로 들어가고 4개넣으면 상우하왼 시계방향.*/
+  /*collapsing margin은 두개의 상하 경계가 같을 경우 margin이 합쳐져버리는 현상이다. 
+  외울 필요는 없고 이런 일이 발생하면 그렇다고 알고 있자.*/
+  border: 10px;
+  border: black;
+  padding: 20px;
+}
+.button {
+  /*class는 .으로*/
+  border-style: none;
+  border-width: 0px;
+  border-radius: 20%;
+  padding: 10px 20px;
+}
+.blue {
+  background-color: blue;
+}
+.red {
+  background-color: red;
+}
+.experiment {
+  border-radius: 50%;
+}
+.experiment2 {
+  border-radius: 0%;
+} /*실험을 통해 class순서를 통한 우선순위는 없고, cascading을 따름을 알 수 있었다.*/
+parent {
+  background-color: aquamarine;
+  height: 50vh; /*viewport height=screen height 50%*/
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#changed {
+  flex-direction: column; /*기본값은 row*/
+  height: 100vh;
+}
+.flex {
+  display: flex;
+  color: white;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+}
+#wrap {
+  flex-wrap: wrap; /*기본은 nowrap이다*/
+}
+#fixed {
+  position: fixed; /*고정되게 만든다.*/
+  top: 210px; /*절대 위치로 바꾼다. 꺼보면 h1 바로 밑인 상대위치가 됨*/
+  opacity: 0.3;
+  background-color: blueviolet;
+}
+#relative {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  position: relative;
+  top: 20px;
+  left: 30px;
+}
+#absolute {
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  position: absolute;
+  top: 600vh;
+  left: 30px;
+}
+#pseudo {
+  height: 50vh;
+  width: 50vw;
+  background-color: turquoise;
+}
+.last_pseudo {
+  height: 50px;
+  width: 50px;
+}
+.last_pseudo:nth-child(2n + 3),
+.last_pseudo:nth-child(2) {
+  /*n에 모든 숫자 대입한다. 이는 1이 없다는 걸 빼고 
+  odd와 동일한 결과.*/
+  background-color: purple;
+}
+.last_pseudo:last-child {
+  /*부모의 마지막 child이면서 last_pseudo인 것을 red로*/
+  background-color: red;
+}
+p span {
+  color: green;
+}
+div + span {
+  color: white;
+}
+span > span {
+  color: darkblue;
+}
+input[placeholder="User"] {
+  background-color: chartreuse;
+}
+input[placeholder~="name"] {
+  /*name을 포함하는 placeholder*/
+  background-color: cadetblue;
+}
+button:hover {
+  background-color: blue;
+}
+a:visited {
+  color: darkmagenta;
+}
+form {
+  border: 1px solid salmon;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+form:focus-within {
+  /*안에거가 focus일 때*/
+  border-width: 5px;
+  border-color: seagreen;
+}
+form:hover input {
+  /*hover된 form의 input*/
+  background-color: sienna;
+}
+input::placeholder {
+  color: slateblue;
+}
+p::selection {
+  color: white;
+}
+:root {
+  --main-color: #fcce00;
+}
+#variable1 {
+  background-color: var(--main-color);
+}
+#variable2 {
+  background-color: var(--main-color);
+}

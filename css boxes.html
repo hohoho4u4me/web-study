@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="css boxes style.css" rel="stylesheet" />
+  </head>
+  <focus>
+    <h1>Box and Inline</h1>
+    <div id="fixed"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <p>block이라 옆에 뭐가 오는걸 허용 안한다.</p>
+    <span>hello</span><span>hello222222</span><span>hello3333333333333</span>
+    <p>
+      inline이라 옆에 뭐가 오는걸 허용한다. img, span, link 정도.<br />물론
+      속성을 바꾼다면 바꿀 수 있다. display: block, display:inline이라던가 등.
+      <br />inline은 내용물을 감쌀 뿐이라 크기가 없고, block은 크기가 있다.
+    </p>
+    <h1>Box의 특징</h1>
+    <p>
+      Box에는 margin/border/padding/content가 존재하는데 css파일 주석과
+      요소분석을 보자.
+    </p>
+    <div id="first">
+      <div id="second">
+        <div id="third"></div>
+      </div>
+    </div>
+    <div id="blank"></div>
+    <!--가독성 및 연습 위해 띄워봤다.-->
+    <span class="button blue">blue</span>
+    <span class="button red">red</span>
+    <span class="button blue">blue</span>
+    <div id="blank"></div>
+    <span class="button red">red</span>
+    <span class="button blue">blue</span>
+    <span class="button experiment2 red experiment">red2</span>
+    <div id="blank"></div>
+    <p>
+      inline block을 통해 block을 inline으로 만들수는 있으나, 반응형 디자인이
+      되지 않는다. 따라서 flexbox 사용.
+    </p>
+    <p>
+      flexbox의 법칙은 세개가 있다.
+      <ol>
+        <li>자식을 움직일 때 부모에게 말해줘서 움직인다.</li>
+        <li>justify-content->main axis인 가로에 영향.</li>
+        <li>align-items->cross axis인 세로에 영향.</li>
+      </ol>
+      아래 예시를 보자.
+    </p>
+    <parent>
+      <div></div>
+      <div></div>
+      <div></div>
+    </parent>
+    <p>
+      위의 규칙은 아래와 같이 바뀔수도 있다.
+    </p>
+    <parent id="changed">
+      <div></div>
+      <div></div>
+      <div></div>
+    </parent>
+    <p>
+      flexbox안에 flexbox를 넣을수도 있고.
+    </p>
+    <parent>
+      <div class="flex">1</div>
+      <div class="flex">2</div>
+      <div class="flex">3</div>
+    </parent>
+    <p>
+      지금까지는 화면이 작아지면 div가 줄어들었지만, 크기를 유지한 채로 밑으로 내려가게 만들수도 있다. 
+      한번 줄여보자.
+    </p>
+    <parent id="wrap">
+      <div></div>
+      <div></div>
+      <div></div>
+    </parent>
+    <div id="blank"></div>
+    <p>
+      이제는 position에 대해 알아보자. 지금까지 따라오던 투명한 박스가 fixed position이다. 
+      position static은 레이아웃이 박스를 처음 위치하는 곳에 있는것이고, 
+      relative는 원래 있어야 할 곳을 기준으로 조금씩 옮길 수 있게 하는것이고,
+      absolute는 가장 가까운 relative 부모를 기준으로 절대 위치를 가지게 된다.
+      아래 검은 박스는 그래서 relative 부모가 없어서 body를 기준으로 하게 된다.
+    </p>
+    <div>
+      <div id="relative"></div>
+      <div id="absolute"></div>
+    </div>
+    <p>
+      이제는 pseudo class에 대해 알아보자. 단순히 이름 class id로 검색하는 걸 
+      넘어서 더 복잡하게 하는 것이다.
+    </p>
+    <div id="pseudo">
+      <div class="last_pseudo"></div>
+      <div class="last_pseudo"></div>
+      <div class="last_pseudo"></div>
+      <div class="last_pseudo"></div>
+      <div class="last_pseudo"></div>
+      <div class="last_pseudo"></div>
+      <div class="last_pseudo"></div>
+    </div>
+    <span>얘는 Black 이지만</span>
+    <p>
+      이건 combination p span을 따라
+      <span>green이 된다.</span>
+      <div></div>
+      <span>이렇게 +를 이용해 div 바로 뒤의 span에 색을 넣거나</span>
+      <br>
+      <span>
+        <span>>를 이용해 p 안의 첫 span에</span>
+        <span>색을 넣을수도 있다.</span>
+      </span>
+    </p>
+    <div id="blank"></div>
+    <p>attribute selector을 사용하면 특성을 통해 많은 걸 할 수 있다.</p>
+    <form>
+      <input type="text" placeholder="First name"/>
+      <input type="text" placeholder="Last name"/>
+      <input type="text" placeholder="User"/>
+    </form>
+    <div id="blank"></div>
+    <p>이제는 state에 대해 알아보자.</p>
+    <button>hover</button>
+    <a href="https://apple.com">visited</a>
+    <form id="state">
+      <input type="text" placeholder="1. hover form"/>
+      <input type="text" placeholder="color brown"/>
+      <input type="text" placeholder="2. focus input"/>
+      <input type="text" placeholder="form border change"/>
+      <input type="text" placeholder="3. only the placeholder color"/>
+      <input type="text" placeholder="is white. write something and check(pseudo element)"/>
+    </form>
+    <p>
+      아니면 이 글을 드래그해보자. 색이 변한다.(pseudo element)
+    </p>
+    <div id="blank"></div>
+    <p>
+      색은 세가지 방식이 있는데, rgba(252,206,151,0.5), rgba(252,206,151), #fcce00이다. 이 부분은 생략하겠다.
+      중요한 것은 변수다. 사용자 지정 속성을 사용할 수 있는데, 흔히 :root에 지정해 전체 문서에서 쓸 수 있게 한다.
+    </p>
+    <p id="variable1">
+      이렇게
+    </p>
+    <p id="variable2">
+      말이다.
+    </p>
+  </body>
+</html>
