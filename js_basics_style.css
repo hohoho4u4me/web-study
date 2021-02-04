@@ -1,0 +1,14 @@
+.change-span-color {
+  color: rgb(250, 235, 215);
+  background-color: tomato;
+}
+.change-h4-color {
+  display: inline;
+  background-color: antiquewhite;
+}
+.tomato_class {
+  color: tomato;
+}
+.js-get-time {
+  font-size: 20px;
+}
